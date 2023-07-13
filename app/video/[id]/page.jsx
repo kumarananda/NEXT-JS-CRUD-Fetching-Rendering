@@ -22,12 +22,12 @@ async function SingleVideoPage({ params }) {
               allow="accelerometer; autoplay; clipboardWrite; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-            <div className="detiles flex mt-1 ">
+            <div className="flex mt-1 ">
               <div className="w-3/4">
                 <span>Views {video.views}</span>
                 <h2 className="font-bold">{video.title}</h2>
               </div>
-              <div className="w-1/4">Dduration: {video.duration} </div>
+              <div className="w-1/4">Duration: {video.duration} </div>
             </div>
           </div>
           <div className="w-[35%] border">

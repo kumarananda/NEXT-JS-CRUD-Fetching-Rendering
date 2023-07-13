@@ -25,7 +25,7 @@ export default async function Home() {
                   Duration
                 </th>
                 <th scope="col" className="px-6 py-3">
-                  Viwes
+                  Views
                 </th>
                 <th scope="col" className="px-6 py-3">
                   Link
