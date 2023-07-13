@@ -1,15 +1,8 @@
 /** @format */
 
+import { getVideos } from "@/libs/getVideos";
 import Link from "next/link";
 import React from "react";
-
-async function getVideos() {
-  const res = await fetch("http://localhost:9000/videos");
-
-  if (!res.ok) throw new Error("There was an error");
-
-  return res.json();
-}
 
 async function VideoList() {
   const video = await getVideos();

@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <body className="">
         <div className="flex ">
           <Navbar />
-          <div class="sm:ml-64 w-full">{children}</div>
+          <div className="sm:ml-64 w-full">{children}</div>
         </div>
       </body>
     </html>

@@ -2,18 +2,10 @@
 
 import React from "react";
 import VideoList from "./VideoList/VideoList";
-
-async function getSingleVideo(id) {
-  const res = await fetch(`http://localhost:9000/videos/${id}`);
-
-  if (!res.ok) throw new Error("There was an error");
-
-  return res.json();
-}
+import { getSingleVideo } from "@/libs/getSingleVideo";
 
 async function SingleVideoPage({ params }) {
   const video = await getSingleVideo(params.id);
-  console.log(video);
 
   return (
     <>
