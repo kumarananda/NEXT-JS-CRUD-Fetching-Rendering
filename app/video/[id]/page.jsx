@@ -3,9 +3,11 @@
 import React from "react";
 import VideoList from "./VideoList/VideoList";
 import { getSingleVideo } from "@/libs/getSingleVideo";
+import { getVideos } from "@/libs/getVideos";
 
 async function SingleVideoPage({ params }) {
   const video = await getSingleVideo(params.id);
+  const videos = await getVideos();
 
   return (
     <>
@@ -33,7 +35,7 @@ async function SingleVideoPage({ params }) {
           <div className="w-[35%] border">
             <h2 className="ml-2">Video List </h2>
             <div className="list w-full">
-              <VideoList />
+              <VideoList videoId={params.id} videos={videos} />
             </div>
           </div>
         </div>
