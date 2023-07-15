@@ -6,8 +6,8 @@ import React from "react";
 
 function TextInput({ name, change, value, placeholder }) {
   return (
-    <div className="mb-6">
-      <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+    <div className="mb-4">
+      <label htmlFor="email" className="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
         Video {name}
       </label>
       <input

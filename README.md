@@ -1,16 +1,16 @@
 <!-- @format -->
 
-## Getting Started
+## NextJS 13 Rendering
 
-To learn more about Next.js, take a look at the following resources:
+- In Next JS 13 app directory no need getServerSideProps or getStaticProps function as Next Js 12 for define how to generate page build time or request time or on demand.
+- Next JS 13 replaced with simpler API built on top of React fetch() and async React Server Components.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Next Js 13 provide three type of rendering methods
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Static Site Generation - SSG
+- Server Site Rendering - SSR
+- Incremental Static Regeneration - ISR
 
-## Deploy on Vercel
+## Fetching
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Data fetching Next js app router use new simplified data fetching on react

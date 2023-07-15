@@ -5,11 +5,14 @@ import Modal from "@/ui/Modal/Modal";
 import React, { useState, useTransition } from "react";
 import TextInput from "./TextInput";
 import { addNewVideo } from "@/libs/addNewVideo";
+import { GrFormClose } from "react-icons/gr";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 function AddVideo() {
   const [modal, setModal] = useState(false);
+
   // handle form change
-  const [fromData, setFromData] = useState({ createdAt: new Date(), url: "", views: "", duration: "", description: "", title: "" });
+  const [fromData, setFromData] = useState({ createdAt: new Date(), url: "", views: "", duration: "", title: "" });
   const formChange = e => {
     setFromData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -17,23 +20,12 @@ function AddVideo() {
   const handleVideoAdd = async e => {
     e.preventDefault();
 
-    await addNewVideo(fromData);
-    const data = new FormData(fromData);
-    const title = data.get("title");
-    const description = data.get("description");
-    const duration = data.get("duration");
-    const views = data.get("views");
-    const url = data.get("url");
-    const createdAt = data.get("createdAt");
+    await addNewVideo(JSON.stringify(fromData));
+  };
 
-    await fetch(`http://localhost:9000/videos`, {
-      method: "POST",
-      body: fromData,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ title, description, duration, views, url, createdAt }),
-    });
+  const handleFormClose = () => {
+    setModal(false);
+    setFromData({ createdAt: new Date(), url: "", views: "", duration: "", title: "" });
   };
 
   return (
@@ -42,11 +34,16 @@ function AddVideo() {
         Add Video
       </button>
       {modal ? (
-        <Modal modalOpen={modal} setModalOpen={setModal} outCickHide={true}>
-          <form onSubmit={handleVideoAdd} className="p-5 ">
-            <h2 className="p-2 border-b border-stone-600 mb-5">Create new video</h2>
+        <Modal modalOpen={modal} setModalOpen={setModal} outCickHide={false}>
+          <h2 className="p-5 border-b border-stone-600  flex justify-between">
+            <h2>Create new video</h2>
+            <button onClick={handleFormClose} className="  w-8 h-8 flex justify-center items-center  rounded-full text-[30px] ">
+              <AiOutlineCloseCircle />
+            </button>
+          </h2>
+          <form onSubmit={handleVideoAdd} className="p-5">
             <TextInput name={"title"} change={formChange} value={fromData.title} placeholder={"Enter video title"} />
-            <TextInput name={"description"} change={formChange} value={fromData.description} placeholder={"Enter video description"} />
+            <TextInput name={"duration"} change={formChange} value={fromData.duration} placeholder={"Enter video duration (min)"} />
             <TextInput name={"url"} change={formChange} value={fromData.url} placeholder={"Enter video url"} />
             <TextInput name={"views"} change={formChange} value={fromData.views} placeholder={"Enter video views (12k)"} />
             <button

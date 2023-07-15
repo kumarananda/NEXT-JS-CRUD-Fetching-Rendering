@@ -12,7 +12,7 @@ async function SingleVideoPage({ params }) {
   return (
     <>
       <div className="w-full p-2">
-        <h1 className="text-lg font-bold">Video Pleayer</h1>
+        <h1 className="text-lg font-bold">Video Player</h1>
         <div className="flex gap-2 ">
           <div className="w-[65%]">
             <iframe

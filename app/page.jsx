@@ -5,6 +5,8 @@ import React from "react";
 import { getVideos } from "@/libs/getVideos";
 import AddVideo from "@/components/AddVideo/AddVideo";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const videos = await getVideos();
 
@@ -13,7 +15,7 @@ export default async function Home() {
       <div className="m-4 ">
         <div className="text-3xl font-bold bg-slate-400 w-full p-4 rounded-t">
           <div className="text-lg font-bold flex justify-between">
-            <h2>Video Player</h2>
+            <h2 className="text-white">Video Player</h2>
             <AddVideo />
           </div>
         </div>
