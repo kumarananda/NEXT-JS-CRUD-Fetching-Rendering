@@ -4,6 +4,8 @@ import SiteHeader from "@/components/header/header";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/nav/navbar";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="">
+        <ToastContainer z />
         <div className="flex ">
           <Navbar />
           <div className="sm:ml-64 w-full">{children}</div>

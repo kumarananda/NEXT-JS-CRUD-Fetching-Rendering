@@ -2,15 +2,8 @@
 
 ## NextJS 13 Rendering
 
-- In Next JS 13 app directory no need getServerSideProps or getStaticProps function as Next Js 12 for define how to generate page build time or request time or on demand.
-- Next JS 13 replaced with simpler API built on top of React fetch() and async React Server Components.
-
-Next Js 13 provide three type of rendering methods
-
-- Static Site Generation - SSG
-- Server Site Rendering - SSR
-- Incremental Static Regeneration - ISR
-
 ## Fetching
 
-# Data fetching Next js app router use new simplified data fetching on react
+In This CRUD application i'm create server side - dynamic rendered page, This page use cache with next js 13 dynamic ("force-dynamic") option. Next js default behavior is static (render on build time), but in this page i'm add a get a post request. Post request will add data for same get Request data collection and get request re fetch data for this page with useRouter() initialization and call router.refresh()
+
+#

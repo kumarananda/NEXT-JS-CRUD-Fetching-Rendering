@@ -7,6 +7,9 @@ export async function addNewVideo(data) {
       "Content-Type": "application/json",
     },
     body: data,
+    next: {
+      revalidate: 0,
+    },
   });
 
   if (!res.ok) throw new Error("There was an error");

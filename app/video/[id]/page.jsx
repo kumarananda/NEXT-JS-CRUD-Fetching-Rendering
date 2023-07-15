@@ -4,6 +4,8 @@ import React from "react";
 import VideoList from "./VideoList/VideoList";
 import { getSingleVideo } from "@/libs/getSingleVideo";
 import { getVideos } from "@/libs/getVideos";
+import { notFound } from "next/navigation";
+export const dynamic = "force-dynamic";
 
 async function SingleVideoPage({ params }) {
   const video = await getSingleVideo(params.id);

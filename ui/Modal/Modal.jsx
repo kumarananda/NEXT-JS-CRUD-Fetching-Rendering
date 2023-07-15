@@ -30,7 +30,7 @@ const Modal = ({ children, modalOpen = false, setModalOpen, MBoxWidth, outCickHi
     <>
       {/* <!-- MODAL BOX  --> */}
       {modalOpen && (
-        <div scroll="no" style={{ zIndex: `${ZIndex ? ZIndex : 99999999}` }} className="modal-blur-box">
+        <div scroll="no" style={{ zIndex: `${ZIndex ? ZIndex : 99}` }} className="modal-blur-box">
           <div ref={ref} className="refWraper">
             <div style={{ width: `${MBoxWidth ? MBoxWidth + "px" : "500px"}` }} className="modal-card">
               {children}

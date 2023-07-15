@@ -4,8 +4,10 @@ import React from "react";
 
 import { getVideos } from "@/libs/getVideos";
 import AddVideo from "@/components/AddVideo/AddVideo";
+import { minToHm, nFormatter } from "@/utils/format";
+import Link from "next/link";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic"; // Per request update cache
 
 export default async function Home() {
   const videos = await getVideos();
@@ -42,15 +44,18 @@ export default async function Home() {
                 <>
                   <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      {item.title}
+                      <Link className="hover:text-blue-500" href={`/video/${item.id}`}>
+                        {" "}
+                        {item.title}
+                      </Link>
                     </th>
 
-                    <td className="px-6 py-4">{item.duration}</td>
-                    <td className="px-6 py-4">{item.views}</td>
+                    <td className="px-6 py-4">{minToHm(item.duration)} Hour</td>
+                    <td className="px-6 py-4">{nFormatter(item.views)}</td>
                     <td className="px-6 py-4">
-                      <a href={`/video/${item.id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                      <Link href={`/video/${item.id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                         Open
-                      </a>
+                      </Link>
                     </td>
                   </tr>
                 </>
