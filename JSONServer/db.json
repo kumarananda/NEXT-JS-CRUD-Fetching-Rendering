@@ -33,14 +33,6 @@
       "duration": "4000",
       "title": "All The JavaScript You Need To Know For React (More JS To Know)",
       "id": 3
-    },
-    {
-      "createdAt": "2023-07-15T17:53:27.486Z",
-      "url": "https://www.youtube.com/embed/OJ5GaNVujaw",
-      "views": "500",
-      "duration": "120",
-      "title": "Data fetching in NextJs 13 `app` router",
-      "id": 4
     }
   ]
 }
