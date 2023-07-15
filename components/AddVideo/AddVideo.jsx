@@ -37,9 +37,9 @@ function AddVideo() {
       return toast("Youtube URL is not valid");
     }
 
-    const checkEmbed = url.includes("embed"); // https://youtu.be/TWfW_c3jG9A
+    const checkEmbed = url.includes("embed");
 
-    let embedLink;
+    let embedLink = url;
     if (!checkEmbed) {
       if (checkUrl_2) {
         embedLink = url.replace("https://youtu.be/", "https://www.youtube.com/embed/");
