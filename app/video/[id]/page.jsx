@@ -5,6 +5,7 @@ import VideoList from "./VideoList/VideoList";
 import { getSingleVideo } from "@/libs/getSingleVideo";
 import { getVideos } from "@/libs/getVideos";
 import { notFound } from "next/navigation";
+import { minToHm, nFormatter } from "@/utils/format";
 export const dynamic = "force-dynamic";
 
 async function SingleVideoPage({ params }) {
@@ -28,10 +29,10 @@ async function SingleVideoPage({ params }) {
             ></iframe>
             <div className="flex mt-1 ">
               <div className="w-3/4">
-                <span>Views {video.views}</span>
+                <span>Views {nFormatter(video.views)}</span>
                 <h2 className="font-bold">{video.title}</h2>
               </div>
-              <div className="w-1/4">Duration: {video.duration} </div>
+              <div className="w-1/4">Duration: {minToHm(video.duration)} </div>
             </div>
           </div>
           <div className="w-[35%] border">

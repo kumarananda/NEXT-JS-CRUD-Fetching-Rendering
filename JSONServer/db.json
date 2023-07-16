@@ -33,6 +33,14 @@
       "duration": "4000",
       "title": "All The JavaScript You Need To Know For React (More JS To Know)",
       "id": 3
+    },
+    {
+      "createdAt": "2023-07-16T04:08:45.759Z",
+      "url": "https://www.youtube.com/embed/NOJCt7qyh9c",
+      "views": "54603",
+      "duration": "7",
+      "title": "Build an Awwwards Curved Menu with Nextjs and Framer Motion",
+      "id": 4
     }
   ]
 }
