@@ -29,7 +29,7 @@ async function SingleVideoPage({ params }) {
             ></iframe>
             <div className="flex mt-1 ">
               <div className="w-3/4">
-                <span>Views {nFormatter(video.views)}</span>
+                <span>Views: {nFormatter(video.views)}</span>
                 <h2 className="font-bold">{video.title}</h2>
               </div>
               <div className="w-1/4">Duration: {minToHm(video.duration)} </div>

@@ -20,5 +20,5 @@ export function nFormatter(num, digits=2) {
     h += (h < 0) ? 1 : 0;
     let m2 = Math.abs(m % 60);
     m2 = (m2 < 10) ? '0' + m2 : m2;
-    return (h < 0 ? '' : '+') + h + ':' + m2;
+    return  h + ':' + m2;
   }
